@@ -1,0 +1,204 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+
+    
+  /* TEMA EM AZUL  */
+   /* --brand-primary: 14 165 233; */   /* #0ea5e9 (placeholder, ajuste após confirmação) */
+   /* --brand-secondary: 6 182 212; */  
+   /* --brand-accent: 6 182 212; */    
+   /*  --brand-dark: 12 74 110;  */    
+   /*   --brand-light: 240 249 255; */    
+   /*  --muted-bg: 241 245 249;  */    
+   /*  --muted-fg: 100 116 139;  */     
+    
+    
+
+    /* Canais RGB (sem vírgula) para suportar transparência via Tailwind */
+    /*  --brand-primary: 22 163 74; */     /* #16a34a (verde escuro vibrante) */
+    /* --brand-secondary: 21 128 61;  */  /* #15803d (verde floresta) */
+    /* --brand-accent: 21 128 61;  */   /* por padrão igual ao secondary */
+    /* --brand-dark: 20 83 45; */       /* #14532d (verde musgo escuro) */
+    /* --brand-light: 240 253 244;  */  /* #f0fdf4 (verde muito claro) */
+    /* --muted-bg: 240 253 244;  */     /* #f0fdf4 (tom claro de verde) */
+    /* --muted-fg: 34 197 94;  */       /* #22c55e (verde médio) */
+
+
+    /* TEMA BASEADO NA COR #4F5289 */
+    --brand-primary: 79 82 137;     /* #4F5289 (azul arroxeado principal) */
+    --brand-secondary: 99 102 167;  /* #6366a7 (tom mais claro) */
+    --brand-accent: 139 142 207;   /* #8b8ecf (tom acentuado mais claro) */
+    --brand-dark: 59 62 117;       /* #3b3e75 (tom mais escuro) */
+    --brand-light: 243 244 251;    /* #f3f4fb (fundo muito claro) */
+    --muted-bg: 243 244 251;        /* #f3f4fb (tom claro para fundos) */
+    --muted-fg: 99 102 167;         /* #6366a7 (tom médio para textos) */
+
+
+  }
+
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    /* Fundo azul muito suave para toda a aplicação */
+    @apply bg-brand-light text-gray-900;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply font-sans;
+  }
+
+  /* Estilo global para campos <select> com ícone de seta personalizado
+     - Usa data URI SVG com stroke na cor neutra
+     - Realça para a cor primária quando em foco
+     - Não afeta selects com atributo multiple */
+  select:not([multiple]) {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23626E8C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem 1rem;
+    padding-right: 2.5rem; /* espaço para a seta */
+  }
+
+  select:not([multiple]):focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(var(--brand-primary) / 0.35);
+    border-color: rgb(var(--brand-primary));
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A6EBB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+  }
+
+  /* Variante: select com ícone de passageiros à esquerda + seta à direita */
+  .select-with-icon-users {
+    background-image:
+      url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23626E8C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3e%3ccircle cx='9' cy='7' r='4'/%3e%3cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3e%3cpath d='M16 11a4 4 0 0 1 0 8'/%3e%3c/svg%3e"),
+      url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23626E8C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+    background-repeat: no-repeat, no-repeat;
+    background-position: left 0.75rem center, right 0.75rem center;
+    background-size: 1rem 1rem, 1rem 1rem;
+    padding-left: 2.5rem; /* espaço para o ícone de usuários */
+    padding-right: 2.5rem; /* espaço para a seta */
+  }
+
+  .select-with-icon-users:focus {
+    background-image:
+      url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A6EBB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3e%3ccircle cx='9' cy='7' r='4'/%3e%3cpath d='M22 21v-2a4 4 0 0 0-3-3.87'/%3e%3cpath d='M16 11a4 4 0 0 1 0 8'/%3e%3c/svg%3e"),
+      url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232A6EBB' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'/%3e%3c/svg%3e");
+  }
+}
+
+@layer components {
+  .gradient-ocean {
+    @apply bg-gradient-to-r from-brand-primary to-brand-accent;
+  }
+  
+  .gradient-hero {
+    @apply bg-gradient-to-br from-brand-primary/20 via-brand-accent/10 to-brand-primary/20;
+  }
+  
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none;
+    @apply px-4 py-2 gap-2 whitespace-nowrap;
+    /* Suaviza a animação de movimento no clique */
+    @apply transition-transform;
+    will-change: transform;
+  }
+
+  /* Efeito de "press" ao clicar: leve deslocamento e redução de escala */
+  .btn:active {
+    transform: translateY(1px) scale(0.98);
+  }
+  
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs gap-1.5;
+  }
+  
+  .btn-lg {
+    @apply px-6 py-3 text-base gap-3;
+  }
+  
+  .btn-primary {
+    @apply btn bg-brand-primary text-white hover:bg-brand-primary/90;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-gray-100 text-gray-900 hover:bg-gray-200;
+  }
+  
+  .btn-outline {
+    @apply btn border border-gray-300 hover:bg-gray-50;
+  }
+  
+  .btn-icon {
+    @apply p-2 w-auto h-auto;
+  }
+  
+  .card {
+    @apply rounded-lg border border-gray-200 bg-white shadow-sm;
+  }
+  
+  /* Correções específicas para botões com ícones */
+  .btn svg {
+    @apply flex-shrink-0;
+  }
+  
+  .btn-with-icon {
+    @apply flex items-center gap-2 px-4 py-2;
+  }
+
+  .btn-with-icon svg {
+    @apply w-4 h-4 flex-shrink-0;
+  }
+
+  /* Links de navegação (Navbar) modernos e acessíveis */
+  .nav-link {
+    /* Evitar variantes dentro do @apply para compatibilidade do Tailwind */
+    @apply relative px-3 py-2 rounded-md font-medium text-gray-900 transition-smooth;
+  }
+  .nav-link:hover {
+    @apply text-brand-primary bg-muted;
+  }
+  .nav-link-active {
+    @apply text-brand-primary bg-brand-light font-semibold;
+  }
+  /* Indicador inferior animado */
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background: rgb(var(--brand-primary));
+    transition: width 200ms ease-in-out;
+  }
+  .nav-link:hover::after,
+  .nav-link-active::after,
+  .nav-link.router-link-active::after {
+    width: 100%;
+  }
+  /* Estado ativo via Vue Router */
+  .nav-link.router-link-active {
+    @apply text-brand-primary bg-brand-light font-semibold;
+  }
+}
+
+@layer base {
+  /* Fallback: aplica leve movimento também para botões sem a classe .btn */
+  button {
+    transition: transform 150ms ease-in-out;
+    will-change: transform;
+  }
+  button:active {
+    transform: translateY(1px) scale(0.98);
+  }
+}
