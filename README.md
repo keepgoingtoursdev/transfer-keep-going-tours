@@ -28,7 +28,9 @@ Funções utilitárias em `src/services/supabase.ts`:
 - `getSeasonDates()` — retorna `{ start, end }` para limitar o datepicker;
 - `findZoneByCepFromDb(zones, cep)` — normaliza CEP e encontra a zona correspondente.
 
+
 ## Próximos passos
+
 
 - Integrar a Calculadora para usar os dados de `zones` e `services` do Supabase;
 - Carregar `season_start_date` e `season_end_date` ao montar a página e limitar o datepicker;
