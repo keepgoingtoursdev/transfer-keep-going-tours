@@ -376,7 +376,7 @@ function closeReservationForm() {
 const handleNext = () => {
   if (calculatorStore.step === 1) {
     if (!calculatorStore.tripType) {
-      toastStore.warning("Selecione o tipo de viagem");
+      toastStore.warning("Selecione o Tipo de Serviço");
       return;
     }
   } else if (calculatorStore.step === 2) {
@@ -609,7 +609,7 @@ const buildQuoteMessage = () => {
     const servicoVolta = getServiceNameForVehicle(veiculoVolta);
     const dataVoltaBR = dataIdaBR;
     text +=
-      `Tipo de viagem: Somente Volta\n` +
+      `Tipo de Serviço: Somente Volta\n` +
       `Volta: Porto de Santos -> Destino CEP ${destinoVoltaCep} (Região: ${destinoVoltaRegiao})\n` +
       `Data (volta): ${dataVoltaBR}\n` +
       `Passageiros (volta): ${paxVolta}\n` +
@@ -617,7 +617,7 @@ const buildQuoteMessage = () => {
       `Veículo (volta): ${veiculoVolta}`;
   } else {
     text +=
-      `Tipo de viagem: ${calculatorStore.tripType === "roundtrip" ? "Ida e Volta" : "Somente Ida"}\n` +
+      `Tipo de Serviço: ${calculatorStore.tripType === "roundtrip" ? "Ida e Volta" : "Somente Ida"}\n` +
       //`Nome: ${name}\n` +
       //`Endereço: ${address} - ${addressState}\n` +
       `Ida: Origem CEP ${origemCep} (Região: ${origemRegiao}) -> Porto de Santos\n` +
@@ -693,14 +693,21 @@ const buildQuoteMessage = () => {
 };
 
 function buildContactPrefix() {
+  const an = ((calculatorStore as any).agencyName || "").trim();
+  const ac = ((calculatorStore as any).agencyCity || "").trim();
+  const as = ((calculatorStore as any).agencyState || "").trim();
+  const aw = ((calculatorStore as any).agencyWhatsapp || "").trim();
   const n = (contactName.value || "").trim();
   const p = (contactPhone.value || "").trim();
   const s = (contactState.value || "").trim();
   const o = (contactObservation.value || "").trim();
 
   let prefix = "";
+  if (an || ac || as || aw) {
+    prefix += `Dados da agência:\nNome da agência: ${an || "—"}\nCidade: ${ac || "—"}\nEstado: ${as || "—"}\nWhatsApp: ${aw || "—"}\n\n`;
+  }
   if (n || p || s || o) {
-    prefix = `Dados de contato:\nNome: ${n || "—"}\nTelefone: ${p || "—"}\nEstado: ${s || "—"}\nObservação: ${o || "—"}\n\n`;
+    prefix += `Dados de contato:\nNome: ${n || "—"}\nTelefone: ${p || "—"}\nEstado: ${s || "—"}\nObservação: ${o || "—"}\n\n`;
   }
   return prefix;
 }

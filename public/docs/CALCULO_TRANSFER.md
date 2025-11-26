@@ -30,7 +30,7 @@ Estimar um orçamento para o transfer com base no serviço selecionado, tipo de 
 - maxPrice ≈ total × 1,15
 
 ## Fluxo no App (passo a passo)
-1) Tipo de viagem (ida ou ida e volta)
+1) Tipo de Serviço (ida ou ida e volta)
 2) CEP de origem (identificação da zona por faixa de CEP)
 3) Data (restrita pelo período de temporada)
 4) Passageiros
