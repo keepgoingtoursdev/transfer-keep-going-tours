@@ -2,8 +2,10 @@
   <div class="min-h-screen pt-32 pb-20 px-4">
     <div class="container mx-auto max-w-5xl">
       <div class="text-center mb-12">
-        <h1 class="text-5xl font-bold mb-3">Bem-vindo</h1>
-        <p class="text-xl text-muted-foreground">Escolha como deseja iniciar</p>
+        <h1 class="text-5xl font-bold mb-3">Bem-vindo !</h1>
+        <p class="text-xl text-muted-foreground">
+          Selecione como deseja iniciar
+        </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <button
@@ -25,6 +27,11 @@
             <span class="text-3xl font-bold">Agência de viagens</span>
           </div>
         </button>
+      </div>
+      <div class="mt-6 text-center">
+        <p class="text-2xl text-muted-foreground">
+          Os valores são os mesmos nas duas opções
+        </p>
       </div>
     </div>
   </div>

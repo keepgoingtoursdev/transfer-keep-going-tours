@@ -688,7 +688,7 @@ const buildQuoteMessage = () => {
   if (total) {
     text += `\n\nPreço: R$ ${total}`;
   }
-  text += `\n\nObservações: estimativa sujeita a alterações (horário, pedágios, paradas).`;
+  text += `\n\nATENÇÃO: o valor apresentado está sujeito ao pagamento da reserva e/ou disponibilidade.`;
   return text;
 };
 
