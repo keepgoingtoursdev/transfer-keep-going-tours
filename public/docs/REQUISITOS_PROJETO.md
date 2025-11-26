@@ -23,7 +23,7 @@ Sistema web para calculadora de preços de transfers privativos para passageiros
 - **404**: Página de erro para rotas não encontradas
 
 ### 2.2 Sistema de Calculadora (4 Etapas)
-1. **Tipo de Viagem**: Ida simples ou ida e volta
+1. **Tipo de Serviço**: Ida simples ou ida e volta
 2. **Origem e Destino**: Seleção de locais (aeroportos, regiões de SP, etc.)
 3. **Número de Passageiros**: Quantidade de pessoas
 4. **Tipo de Veículo**: Sedan Executivo, SUV Premium, Van, Minibus

@@ -376,7 +376,7 @@ function closeReservationForm() {
 const handleNext = () => {
   if (calculatorStore.step === 1) {
     if (!calculatorStore.tripType) {
-      toastStore.warning("Selecione o tipo de viagem");
+      toastStore.warning("Selecione o Tipo de Serviço");
       return;
     }
   } else if (calculatorStore.step === 2) {
@@ -609,7 +609,7 @@ const buildQuoteMessage = () => {
     const servicoVolta = getServiceNameForVehicle(veiculoVolta);
     const dataVoltaBR = dataIdaBR;
     text +=
-      `Tipo de viagem: Somente Volta\n` +
+      `Tipo de Serviço: Somente Volta\n` +
       `Volta: Porto de Santos -> Destino CEP ${destinoVoltaCep} (Região: ${destinoVoltaRegiao})\n` +
       `Data (volta): ${dataVoltaBR}\n` +
       `Passageiros (volta): ${paxVolta}\n` +
@@ -617,7 +617,7 @@ const buildQuoteMessage = () => {
       `Veículo (volta): ${veiculoVolta}`;
   } else {
     text +=
-      `Tipo de viagem: ${calculatorStore.tripType === "roundtrip" ? "Ida e Volta" : "Somente Ida"}\n` +
+      `Tipo de Serviço: ${calculatorStore.tripType === "roundtrip" ? "Ida e Volta" : "Somente Ida"}\n` +
       //`Nome: ${name}\n` +
       //`Endereço: ${address} - ${addressState}\n` +
       `Ida: Origem CEP ${origemCep} (Região: ${origemRegiao}) -> Porto de Santos\n` +

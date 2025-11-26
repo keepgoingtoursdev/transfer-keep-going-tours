@@ -1,6 +1,6 @@
 <template>
   <div class="space-y-6">
-    <h2 class="text-2xl font-bold text-center mb-6">Tipo de Viagem</h2>
+    <h2 class="text-2xl font-bold text-center mb-6">Tipo de Serviço</h2>
     <div class="space-y-4">
       <!-- Somente Ida -->
       <label
