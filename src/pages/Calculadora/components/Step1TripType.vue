@@ -97,6 +97,7 @@
         <div>
           <div class="font-semibold">Ida e Volta</div>
           <div class="text-sm text-muted-foreground">Trajeto completo</div>
+          <div class="text-sm text-red-600">10% de desconto na volta</div>
         </div>
       </label>
     </div>
