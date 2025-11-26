@@ -693,14 +693,21 @@ const buildQuoteMessage = () => {
 };
 
 function buildContactPrefix() {
+  const an = ((calculatorStore as any).agencyName || "").trim();
+  const ac = ((calculatorStore as any).agencyCity || "").trim();
+  const as = ((calculatorStore as any).agencyState || "").trim();
+  const aw = ((calculatorStore as any).agencyWhatsapp || "").trim();
   const n = (contactName.value || "").trim();
   const p = (contactPhone.value || "").trim();
   const s = (contactState.value || "").trim();
   const o = (contactObservation.value || "").trim();
 
   let prefix = "";
+  if (an || ac || as || aw) {
+    prefix += `Dados da agência:\nNome da agência: ${an || "—"}\nCidade: ${ac || "—"}\nEstado: ${as || "—"}\nWhatsApp: ${aw || "—"}\n\n`;
+  }
   if (n || p || s || o) {
-    prefix = `Dados de contato:\nNome: ${n || "—"}\nTelefone: ${p || "—"}\nEstado: ${s || "—"}\nObservação: ${o || "—"}\n\n`;
+    prefix += `Dados de contato:\nNome: ${n || "—"}\nTelefone: ${p || "—"}\nEstado: ${s || "—"}\nObservação: ${o || "—"}\n\n`;
   }
   return prefix;
 }

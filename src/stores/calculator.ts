@@ -36,6 +36,11 @@ export interface CalculatorState {
   meetingTime?: string;
   meetingNeighborhood?: string;
   meetingState?: string;
+  // Dados da agência (fluxo Agência de viagens)
+  agencyName?: string;
+  agencyCity?: string;
+  agencyState?: string;
+  agencyWhatsapp?: string;
 }
 
 export const useCalculatorStore = defineStore("calculator", () => {
@@ -67,6 +72,10 @@ export const useCalculatorStore = defineStore("calculator", () => {
   const meetingNeighborhood = ref<string>("");
   const meetingState = ref<string>("");
   const meetingCity = ref<string>("");
+  const agencyName = ref<string>("");
+  const agencyCity = ref<string>("");
+  const agencyState = ref<string>("");
+  const agencyWhatsapp = ref<string>("");
 
   // Getters
   const isStepValid = computed(() => {
@@ -149,6 +158,10 @@ export const useCalculatorStore = defineStore("calculator", () => {
     meetingNeighborhood.value = "";
     meetingState.value = "";
     meetingCity.value = "";
+    agencyName.value = "";
+    agencyCity.value = "";
+    agencyState.value = "";
+    agencyWhatsapp.value = "";
   }
 
   function setTripType(type: "oneway" | "roundtrip" | "returnonly") {
@@ -223,6 +236,19 @@ export const useCalculatorStore = defineStore("calculator", () => {
     meetingCity.value = value;
   }
 
+  function setAgencyName(value: string) {
+    agencyName.value = value;
+  }
+  function setAgencyCity(value: string) {
+    agencyCity.value = value;
+  }
+  function setAgencyState(value: string) {
+    agencyState.value = value;
+  }
+  function setAgencyWhatsapp(value: string) {
+    agencyWhatsapp.value = value;
+  }
+
   function enableLodging(flag: boolean) {
     lodgingEnabled.value = !!flag;
   }
@@ -264,6 +290,10 @@ export const useCalculatorStore = defineStore("calculator", () => {
     meetingNeighborhood,
     meetingState,
     meetingCity,
+    agencyName,
+    agencyCity,
+    agencyState,
+    agencyWhatsapp,
     // Getters
     isStepValid,
     canProceed,
@@ -291,6 +321,10 @@ export const useCalculatorStore = defineStore("calculator", () => {
     setMeetingNeighborhood,
     setMeetingState,
     setMeetingCity,
+    setAgencyName,
+    setAgencyCity,
+    setAgencyState,
+    setAgencyWhatsapp,
     enableLodging,
     setLodgingSelection,
   };

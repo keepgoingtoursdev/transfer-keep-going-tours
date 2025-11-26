@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "@/pages/Home.vue";
+import Start from "@/pages/Start.vue";
+import Agencia from "@/pages/Agencia.vue";
 import Servicos from "@/pages/Servicos.vue";
 import Calculadora from "@/pages/Calculadora/index.vue";
 import Contato from "@/pages/Contato.vue";
@@ -24,8 +26,18 @@ const router = createRouter({
   routes: [
     {
       path: "/",
+      name: "start",
+      component: Start,
+    },
+    {
+      path: "/home",
       name: "home",
       component: Home,
+    },
+    {
+      path: "/agencia",
+      name: "agencia",
+      component: Agencia,
     },
     {
       path: "/servicos",
