@@ -92,6 +92,6 @@ function startBudget() {
   calc.setAgencyState(agencyState.value.trim());
   calc.setAgencyWhatsapp(phoneDigits);
   calc.setTripType("oneway");
-  router.push({ path: "/calculadora" });
+  router.push({ path: "/home" });
 }
 </script>
