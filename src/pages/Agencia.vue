@@ -12,7 +12,7 @@
             <input
               v-model="agencyName"
               class="h-12 px-3 border border-gray-200 rounded-md bg-white w-full"
-              placeholder="Ex.: Agência XPTO"
+              placeholder="Ex.: Agência Transfer"
             />
           </div>
           <div>
