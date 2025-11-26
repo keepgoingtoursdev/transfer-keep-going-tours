@@ -229,7 +229,7 @@
 <script setup lang="ts">
 import { useCalculatorStore } from "@/stores/calculator";
 import { useToastStore } from "@/stores/toast";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import {
   fetchZones,
   fetchVehicles,
@@ -289,6 +289,7 @@ const BR_STATES = [
 
 // Barra de progresso: esconder Step 5 (Serviço) enquanto desabilitado
 const route = useRoute();
+const router = useRouter();
 const withLodging = computed(() => route.query.lodging === "true");
 const visibleSteps = computed<number[]>(() =>
   withLodging.value ? [1, 2, 3, 4, 6, 8, 7] : [1, 2, 3, 4, 6, 7],
@@ -495,6 +496,7 @@ const handleReset = () => {
   returnVehicleType.value = "";
   returnDate.value = "";
   toastStore.info("Calculadora reiniciada");
+  router.push({ path: "/home" });
 };
 
 const getEstimatedVehiclePrice = (vehicle: string) => {
