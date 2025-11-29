@@ -13,7 +13,7 @@
           class="w-full h-12 pl-10 pr-10 border border-gray-200 rounded-md bg-white select-with-icon-users"
         >
           <option value="">Selecione</option>
-          <option v-for="i in 10" :key="i" :value="i.toString()">
+          <option v-for="i in 20" :key="i" :value="i.toString()">
             {{ i }} passageiro{{ i > 1 ? "s" : "" }} {{ i === 1 ? "👤" : "👥" }}
           </option>
         </select>
