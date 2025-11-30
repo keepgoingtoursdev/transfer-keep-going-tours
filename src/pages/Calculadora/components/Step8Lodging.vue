@@ -96,8 +96,8 @@
           <!-- Botão -->
           <div class="md:w-1/3 text-right">
             <div class="mt-1 text-sm text-muted-foreground">
-              Total (transfer + hospedagem):
-
+              <!--   Total (transfer + hospedagem): -->
+              Total (transfer + hospedagem + transfer hotel em Santos/porto):
               <div class="text-2xl font-extrabold text-pink-600">
                 {{ formatCurrency(transferPrice + getLodgingTotal(l)) }}
               </div>
