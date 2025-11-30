@@ -27,10 +27,10 @@
             class="card p-6 text-left hover:shadow-medium transition-smooth border-2 hover:border-brand-primary/20 flex flex-col justify-between h-full"
           >
             <div class="flex items-center gap-3 mb-3">
-              <Car class="h-8 w-8 text-brand-primary" />
+              <Car class="h-9 w-9 text-brand-primary" />
               <h3 class="text-xl font-semibold">
-                <!-- Grande São Paulo → Santos -->
-                Cidades do ESP → Santos
+                Saídas de qualquer cidade do Estado de São Paulo > Santos
+                <!-- Cidades do ESP → Santos -->
               </h3>
             </div>
             <p class="text-muted-foreground mb-4">
@@ -53,8 +53,8 @@
             <div class="flex items-center gap-3 mb-3">
               <Ship class="h-8 w-8 text-brand-primary" />
               <h3 class="text-xl font-semibold">
-                <!-- Santos → São Paulo -->
-                Santos → Cidades do ESP
+                Santos > qualquer cidade do Estado de São Paulo
+                <!-- Santos → Cidades do ESP -->
               </h3>
             </div>
             <p class="text-muted-foreground mb-4 flex flex-col gap-2">
@@ -212,10 +212,10 @@
             class="card p-6 text-left hover:shadow-medium transition-smooth border-2 hover:border-brand-primary/20 flex flex-col justify-between h-full"
           >
             <div class="flex items-center gap-3 mb-3">
-              <Car class="h-8 w-8 text-brand-primary" />
+              <Car class="h-9 w-9 text-brand-primary" />
               <h3 class="text-xl font-semibold text-brand-primary">
-                <!-- Grande São Paulo → Santos -->
-                Cidades do ESP → Santos
+                Saídas de qualquer cidade do Estado de São Paulo > Santos
+                <!-- Cidades do ESP → Santos -->
               </h3>
             </div>
             <p class="text-muted-foreground mb-4">
@@ -237,8 +237,8 @@
             <div class="flex items-center gap-3 mb-3">
               <Ship class="h-8 w-8 text-brand-primary" />
               <h3 class="text-xl font-semibold text-brand-primary">
-                <!-- Santos → São Paulo -->
-                Santos → Cidades do ESP
+                Santos > qualquer cidade do Estado de São Paulo
+                <!--  Santos → Cidades do ESP -->
               </h3>
             </div>
             <p class="text-muted-foreground mb-4 flex flex-col gap-2">
