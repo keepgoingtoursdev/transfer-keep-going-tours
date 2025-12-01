@@ -105,8 +105,21 @@ watch(
 );
 
 function initViewDate(): Date {
-  const d = isoToDate(props.selectedIso) || isoToDate(props.min) || new Date();
-  return new Date(d.getFullYear(), d.getMonth(), 1);
+  const selected = isoToDate(props.selectedIso);
+  const now = new Date();
+  const base = selected || now;
+  const min = isoToDate(props.min);
+  const max = isoToDate(props.max);
+  let d = new Date(base.getFullYear(), base.getMonth(), 1);
+  if (min) {
+    const minMonth = new Date(min.getFullYear(), min.getMonth(), 1);
+    if (d < minMonth) d = minMonth;
+  }
+  if (max) {
+    const maxMonth = new Date(max.getFullYear(), max.getMonth(), 1);
+    if (d > maxMonth) d = maxMonth;
+  }
+  return d;
 }
 
 function isoToDate(iso?: string): Date | null {
